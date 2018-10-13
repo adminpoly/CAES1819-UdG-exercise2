@@ -9,25 +9,6 @@ import java.util.Vector;
 public class Exercise2Test {
 
     @Test
-    public void testNull(){
-        Vector a= null;
-        Vector b= null;
-
-        final Vector result = Exercise2.union(a, b);
-        assertNull(result);
-    }
-
-    @Test
-    public void testPrimerVectorNull(){
-        Vector a= null;
-        Vector b= new Vector(4);
-        b.add(1);
-
-        final Vector result = Exercise2.union(a, b);
-        assertEquals(result,b);
-    }
-
-    @Test
     public void testRepetits(){
         Vector a= new Vector();
         a.add(5);
@@ -36,8 +17,8 @@ public class Exercise2Test {
         b.add(5);
         b.add(6);
         final Vector result = Exercise2.union(a, b);
-        assertEquals(result,b);
-    }
+        assertEquals(a,result);
+   }
 
     @Test
     public void testVectorBuits(){
@@ -53,10 +34,15 @@ public class Exercise2Test {
         a.add(1);
         Vector b= new Vector();
         b.add("b");
-        //final Vector result = Exercise2.union(a, b);
-        assertThrows(IllegalFormatException.class,() -> Exercise2.union(a, b));
+        assertThrows(IllegalArgumentException.class,() -> Exercise2.union(a, b));
     }
 
+/*
+si dos vector null
+Repetits (no ha de haber repetits)
+Vectors buits (unio de dos vector buit es null)
+voctors tipus diferets (unio ha de llenzar una excepcio IllegalFormatException)
+ */
 
 
 }
