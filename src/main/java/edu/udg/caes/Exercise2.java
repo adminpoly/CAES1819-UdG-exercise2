@@ -12,7 +12,8 @@ public class Exercise2 {
      *  @param b second vector
      *  @return objects that are in either one of the two argument vectors
      *          si dos vectors son de diferent tipus es llanza una excepcio IllegalArgumentException
-     *          si els dos vectors son buits retorna nullç
+     *          si els dos vectors son buits retorna null
+     *          no permet repeticions
      *
      */
     public static Vector union (Vector a, Vector b)
